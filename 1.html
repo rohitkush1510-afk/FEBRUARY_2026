@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .abc {
+            position: absolute;
+            width: 440px;
+            height: 440px;
+            background: #f62323;
+        }
+    </style>
+</head>
+<body>
+    <div class="abc"></div>
+</body>
+<script>
+    let abc = document.querySelector(".abc");
+    abc.addEventListener("mouseover" , function () {
+        abc.style.backgroundColor = "yellow" ;
+    }); 
+     abc.addEventListener("mouseout" , function () {
+        abc.style.backgroundColor = "red" ; 
+    }) ;
+     window.addEventListener("mousemove" , function(dets) {
+        abc.style.top = dets.clientY + "px"
+        abc.style.left = dets.clientX + "px"
+    })
+</script>
+</html>
