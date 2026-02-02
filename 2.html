@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbling Event and Event Delegation </title>
+    <style>
+        .lt {
+            text-decoration: line-through; 
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>apple</li>
+        <li>guava</li>
+        <li>litchi</li>
+        <li>berry</li>
+        <li>mango</li>
+        <li>papaya</li>
+    </ul>
+
+    <input type="text" placeholder="write your wishes">
+    <h2>Characters Left : <span></span></h2>
+</body>
+<script>
+    let a = document.querySelector("ul");
+    a.addEventListener("click" , function(e){
+        e.target.classList.toggle("lt")
+    })
+
+    let b = document.querySelector("input");
+    let c = document.querySelector("span");
+
+    b.addEventListener("input" , function(){
+        let left = 20-b.value.length;
+        c.textContent = left;
+        
+        if(left<0){
+           c.style.color ="red" ;
+        }
+        else {
+             c.style.color ="blue" ;
+        }
+    })
+</script>
+</html>
